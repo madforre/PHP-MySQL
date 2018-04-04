@@ -1,0 +1,447 @@
+﻿1. WEB이란?
+
+	월드 와이드 웹(World Wide Web) 의 줄임말로, 첫 글자를 따서 WWW라고
+	부르기도 합니다.
+	'웹(web)'을 영어 뜻 그대로 풀이하면 '거미줄'이라는 뜻이며, 이는 '세상의 크기만한 거미줄'이라
+	직역할 수 있습니다.
+
+2. 클라이언트, 서버에 대해서 정리
+
+	클라이언트 : 네트워크로 연결된 서버로부터 정보를 제공받는 컴퓨터.
+	서버 : 클라이언트에게 네트워크를 통해 정보나 서비스를 제공하는 컴퓨터(server computer) 또는 	          
+	            프로그램(server program)을 말한다.
+
+	클라이언트(request) <-> 서버(response)
+				PHP, JSP, ASP
+	
+		
+3, XML HTTRRequest 객체에 대해서 정리
+	
+	XMLHttpRequest는 Microsoft가 만든 JavaScript 개체(object)입니다. 
+	후에 Mozilla도 이것을 받아들였습니다.
+
+	최신의 모든 브라우저는 XMLHttpRequest 객체를 지원합니다.
+	XMLHttpRequest 객체는 백그라운드에서 웹 서버와 데이터를 교환하기 위해 사용할 수 있습니다.
+	이것은, 전체 페이지를 다시 로드하지 않고도, 웹 페이지의 일부를 업데이트할 수 있다는 의미입니다.
+	
+4. GET, POST 방식의 차이에 대해서 정리
+
+	GET-	클라이언트가 입력한 query의 이름과 값이 결합되어 스트링 형태로 서버에 전달됩니다.
+	POST- 	클라이언트에서 데이터를 인코딩 -> 서버측에서 디코딩 해서 사용합니다.
+
+5. PHP란?
+
+	Hypertext Preprocessor 하이퍼텍스트 프리프로세서
+
+	php는 명령 줄 인터페이스 방식의 자체 인터프리터를 제공한다.
+
+	서버 측 오픈 소스 소프트웨어
+
+	다양한 데이터 베이스 지원
+	
+	응답을 해주기 전에 미리 처리하는 언어.
+
+	PHP는 서버 측에서 실행되는 프로그래밍 언어로 HTML을 프로그래밍적으로 생성해주고, 
+	데이터베이스와 상호작용 하면서 데이터를 저장하고, 표현합니다. 
+	PHP는 웹을 위해서 만들어졌고, 지금도 웹을 위해서 발전하고 있는 웹을 위한 언어입니다. 
+	웹프로그래밍을 위한 높은 생산성을 제공하는 언어입니다. 
+	특히 서버에 직접 설치해서 운영할 수 있는 설치형 웹에플리케이션의 대다수가 PHP로 만들어졌습니다. 
+
+6. Mysql에 대해서 정리
+
+	세계에서 가장 많이 쓰이는 오픈 소스의 관계형 데이터베이스 관리 시스템입니다.
+
+-------------------------
+
+1. PHP 이해
+
+    HTML으로 응답하기전에
+    처리하는 언어
+    
+2. PHP 환경 설정
+
+	개인 클라우드 애플리케이션 구현 폴더 안에
+	"PHP_환경설정_본인이름.ppt"로 저장
+
+3. PHP 변수와 상수
+4. 프로젝트 수행(컨셉설정과, 일정수립)
+
+Apache >> 웹서버
+PHP.. >> 프로그래밍언어
+Mysql >> DB
+
+XAMP >> 설치
+
+------------------------환경설정----------------------
+
+httpconf 설정
+
+ServerRoot "C:\/xampp/apache" << 실제 서버의 위치
+Listen 8088 		     << 포트번호
+ServerName localhost:8088    << 서버이름
+
+C:\/xampp/htdoes 기본설정된 기본 서버 루트
+
+D:DocumentRoot << 서버 document Root 재설정
+
+--------php.ini 설정------
+
+filesize 2M
+timezone Asia/Seoul
+default_charset = "utf-8"
+mbstring.language = Korean
+mbstring.internal_encoding = UTF-8
+mbstring.http_input = UTF-8
+mbstring.http_output = UTF-8
+mbstring.encoding_translation = On
+mbstring.detect_order = UTF-8
+mbstring.substitute_character = none
+session.gc_maxlifetime=1440 세션값 시간 설정
+
+-------------------------
+
+.html >> PHP 지원 X
+.php >> html + PHP 둘다 쓸 수 있음.
+.php >> php파일만 쓸 수 있다.
+
+클라이언트	브라우저	>> 서버
+		form			2 PHP(서버페이지) >>> DB관련..
+요청(request) 1			   3 응답(response)
+서버주소:포트
+서버이름
+localhost:8088
+IP주소:포트
+
+---------------------------
+PHP변수
+
+변수 : 하나의 data를 저장할 수 있는 공간
+
+1. $기호를 붙여서 사용한다.
+2. a~z, 0~9, Oxff, _
+3. 대소문자 구별 한다. $MANSO사용불가능 $manso사용가능
+4. 숫자로 시작하면 안된다.
+5. Data에의 자료형을 따라서 변수의 자료형이 결정
+6. 한글은 사용하지 않도록 한다.
+
+--------------------------
+PHP echo 사용방법
+
+echo ;// 내장함수
+
+echo "문자열";
+echo "gunhee";
+
+$str = "hee";
+echo "변수";
+echo $str;
+echo "$str";
+
+echo "변수HTML태그";
+echo 변수."HTML태그";
+
+----------------------------------
+
+변수의 자료형
+
+"data의 자료형에 따라 결정 >> 자바스크립트"
+
+$num=100;// integer(정수)
+$num2=1.23;// float(실수)
+$str = "manso"; // string(문자열)
+$arr=new Array(); // object(배열)
+$classEx=new Car();// 외부자원(클래스)
+$dataNull=NULL;//null
+
+내장 함수
+
+echo "표시될 내용" ; //브라우저에 표시
+gettype(변수); // 변수의 타입을 반환
+var_dump(변수); // 변수의 타입과 구조 같이 반환
+is_~~ ; // 타입이 true? 맞니..?
+----------------------------------
+정수와 실수의 자료형 구분
+
+정수  ex) 1
+
+    int 4byte
+    long 8byte
+    
+똑같은 정수인데도 담을 그릇의 크기가 다르다.
+
+실수  ex) 1.1
+
+    기본형은 double 8byte
+            float  4byte
+        
+---------------------------------
+isset(변수);// 변수가 있느냐?
+----------------------------
+
+form 하면 name, value를 꼭 기억하자!
+
+----------------------------------
+
+// 슈퍼글로벌 변수  ex ) $_POST
+
+브라우저가 살아있는 동안 전체 적용.
+
+브라우저가 실행 되는 동안에 설정
+
+---------------------------------
+
+폼태그의 method >> 폼의 정보를 서버에 전송하는 방식
+
+서버페이지(PHP)
+
+$_POST['name']; // 클라이언트 요청(request) 정보가 post 방식일 때
+$_GET['name']; // 클라이언트 요청(request) 정보가 get 방식 일 때
+$_REQUEST['name']; // 클라이언트 요청(request) 정보가 post, get
+
+------------------------------
+
+foreach(배열이름 as 키 값){
+    echo 키값; // 키에 저장된 data get
+}
+
+----------------------------
+
+HTML Preformatted 텍스트 (<pre>) 는  HTML <pre> 요소는 미리 서식이 지정된 텍스트를 나타냅니다(Mark-up). 
+
+echo "<pre>";
+print_r($arrInt);
+echo "</pre>";
+
+이런식으로 치면 HTML에서 
+배열이 이쁘게 보임
+
+-----------------------------
+
+1. echo 와 print의 차이
+
+echo는 그냥 명령문일 뿐이라 함수처럼 사용할 수 없고 리턴 값이 없지만, 
+print는 함수처럼 사용할 수 있고 1을 리턴한다는 점이 차이점입니다.
+또 다른 점이라면, 코드 실행 속도에 있어서 echo가 print보다 미세하게 빠릅니다. 
+그러므로 print 문을 써야 하는 특별한 이유가 없다면 echo를 쓰는 것을 권장합니다.
+
+서버페이지(php)에서 응답 >> 브라우저에 표시
+
+2. php 배열에 대해서 정리
+
+	배열(array)은 한번에 하나 이상의 값들을 담을 수 있는 특별한 변수입니다.
+
+	PHP 에서는 array() 함수를 사용하여 배열을 만듭니다.
+
+	array();
+
+	PHP 에는 배열의 세 가지 유형이 있다:
+
+		Indexed arrays - 숫자 인덱스를 갖는 배열
+		Associative arrays - 이름 키(named keys)를 갖는 배열
+		Multidimensional arrays - 하나 이상의 배열을 포함하는 배열
+
+	
+3. implode() 내장함수에 대해서 정리
+	
+	배열 요소들을 합쳐서 하나의 문자열로 만들 수 있습니다.
+
+	implode("구분기호",$배열명);
+
+4. explode() 내장함수에 대해서 정리
+
+	구분문자를 경계로 문자열을 배열로 나누어 반환하는 함수이다.
+	
+	explode($deli, $str)
+
+5. 연관 배열 이란?
+
+	연관 배열(associative array)은 자료구조의 하나로, 
+	키 하나와 값 하나가 연관되어 있으며 키를 통해 연관되는 값을 얻을 수 있다. 
+
+6. foreach문에 대해서 정리
+
+	foreach(배열이름 as 키){
+ 	   echo 키; // 키에 저장된 data get
+	}
+    
+    연관배열
+    
+    foreach($arrMembers as $key=>$val){ //$key는 문자인덱스, 즉 키를 의미하고 $val은 값을 의미.
+        echo $key."=>".$val."<br>";
+    }
+    
+        연관된 키와 값을 키=>값 으로 출력
+
+	
+	as 뒤에 변수를 적어두면 루프 안에서 배열 안에 존재하는 각 요소를 꺼내서 쓸 수 있습니다. 
+    
+배열 : 연관 배열(키,값).." 키와 연관
+
+1. $연관배열명
+2. $배열명["userId"]="manso"
+3. print $배열명["userId"];
+4. Array 함수 이용 (할당)
+    $배열 = array(k1=>"값1",k2=>"값2");
+    $배열 = [k1=>"값1",k2=>"값2"]; // php 5.4 이상
+    
+    ==========================================
+    
+    <?=변수 ?> 값 하나만 찍힘
+        ex) <td><?=$members[0]['userId']?></td>
+    <?php echo""; ?> 구조 전체가 찍힘
+    
+    -------------------------------
+    
+    exit; // 바로 break;
+    die("종료"); // 메세지를 남기고 break
+
+------------------------------------------------------
+배열의 내장함수
+
+implode('구분기호',배열); // 배열을 구분기호로 문자열로 
+explode('구분기호',배열); //문자열을 구분하여 배열로
+sort($변수); // 오름차순
+rsort($변수); // 내림차순
+
+sort() - sort arrays in ascending order
+rsort() - sort arrays in descending order
+asort() - sort associative arrays in ascending order, according to the value
+ksort() - sort associative arrays in ascending order, according to the key
+arsort() - sort associative arrays in descending order, according to the value
+krsort() - sort associative arrays in descending order, according to the key
+---------------------------------------------------
+
+push // 배열 마지막 요소 뒤 추가
+
+pop // 배열 마지막 요소부터 삭제
+
+array_merge($arr1,$arr2); // 두개의 배열을 하나로 합치는 PHP 내장함수. >> 하나의 새로운 배열 생성.
+
+implode(',',$arr3); // 배열을 구분하여 문자열로 만들어주는 PHP 내장함수.
+
+explode(',',$arr3); // 문자열을 구분하여 배열로 만들어주는 PHP 내장함수.
+
+array_slice($변수,인덱스시작,갯수) 인덱스시작부터 갯수만큼 살림
+                                인덱스시작부터 갯수만큼만 살리고 나머지는 자름
+                                
+------------------------------------------------------
+
+1. PHP 연산자란?
+
+    연산자는 연산을 하기위한 기호이다.
+
+	연산자는 하나 이상의 값(또는, 프로그래밍 은어로 표현)을 받아서 다른 값을 산출합니다. 
+	(그러므로 구조 자체는 표현이 됩니다) 그러므로 (print처럼) 값을 반환하는 함수나 구조를 
+	연산자로 생각할 수 있고, (echo처럼) 아무것도 반환하지 않는 것을 다른 것으로 생각할 수 있습니다.
+
+2. 산술연산자에 대해서 정리
+
+	산술 연산자는 숫자값을 (리터럴 또는 값) 피 연산자로 사용하고 하나의 숫자를 반환한다. 
+	표준 산술 연산자는 덧셈 (+), 뺄셈 (-), 곱셈 (*), 그리고 나눗셈이다 (/).
+
+3. 할당연산자(복합대입)에 대해서 정리
+
+	할당연산자 = 
+    왼쪽 연산수가 오른쪽 표현의 값으로 설정됨을 의미합니다. ("를 설정"입니다)
+	할당 연산자의 값은 할당된 값입니다. 그러므로, "$a = 3"의 값은 3입니다. 
+    
+    복합대입연산자
+    +=, -=, *=, %=, .=
+		
+
+4. 비트연산자에 대해서 정리
+
+	비트 연산자는 정수에 있는 특정 비트를 끄거나 켤 수 있도록 합니다. 
+	왼쪽과 오른쪽 인수가 모두 문자열이면, 비트 연산자는 문자의 아스키 값으로 연산합니다.
+
+5. 비교연산자에 대해서 정리
+
+	비교 연산자는 이름 그대로 두 값을 비교하도록 합니다.
+
+	$a == $b	Equal	$a와 $b가 같으면 TRUE.  >> 값만봄
+
+	$a === $b	Identical	$a와 $b가 같고, 같은 자료형이면 TRUE. (PHP 4에서 추가) >> 값+자료형봄
+
+	$a != $b	Not equal	$a가 $b와 같지 않으면 TRUE. >> 값만봄
+
+	$a <> $b	Not equal	$a가 $b와 같지 않으면 TRUE.
+
+	$a !== $b	Not identical	$a가 $b와 같지 않거나, 같은 자료형이 아니면 TRUE. (PHP 4에서 추가) >> 값+자료형봄
+
+	$a < $b	Less than	$a가 $b보다 작으면 TRUE.
+
+	$a > $b	Greater than	$a가 $b보다 크면 TRUE.
+
+	$a <= $b	Less than or equal to	$a가 $b보다 작거나 같으면 TRUE.
+
+	$a >= $b	Greater than or equal to	$a가 $b보다 크거나 같으면 TRUE.
+    
+    ! >> 아니지?
+    <> 다르냐? 다르면 1 출력, true 출력
+    !== 다르냐?(값과 자료형)
+    != 다르냐?(값)
+    == 같으냐?(값)
+    === 같으냐?(값과 자료형)
+
+
+6. 삼항연산자에 대해서 정리
+
+	(expr1) ? (expr2) : (expr3) 표현은 expr1이 TRUE이면 expr2로 평가되고 
+	expr1이 FALSE이면 expr3로 평가됩니다.	
+
+7. 논리연산자에 대해서 정리
+
+	$a and $b	And	$a와 $b가 모두 TRUE이면 TRUE.
+
+	$a or $b	Or	$a나 $b가 TRUE이면 TRUE.
+
+	$a xor $b	Xor	$a와 $b중 하나만 TRUE일 때만 TRUE.
+
+	! $a	Not	$a가 TRUE가 아니면 TRUE.
+
+	$a && $b	And	$a와 $b가 모두 TRUE이면 TRUE.
+
+	$a || $b	Or	$a나 $b가 TRUE이면 TRUE.
+
+8. 증감연산자에 대해서 정리
+
+	PHP는 C 형식의 사전, 사후 증가 및 감소 연산자를 지원합니다.
+
+	Note: 증가/감소 연산자는 논리 값에 영향을 주지 않습니다. 
+	NULL 값을 감소하는 것도 영향이 없지만, 증가시키면 1이 됩니다.
+
+	++$a	Pre-increment	$a를 1 증가하고, $a를 반환.
+
+	$a++	Post-increment	$a를 반환하고, $a를 1 증가.
+
+	--$a	Pre-decrement	$a를 1 감소하고, $a를 반환.
+
+	$a--	Post-decrement	$a를 반환하고, $a를 1 감소.
+
+--------------------------------------------
+
+break = 루프 탈출
+  - for, foreach, while 등 여러 번 반복되는 루프의 경우에 해당됨
+  - 루프 이후에 등장하는 코드를 계속 실행함
+  - if문은 반복문이 아니라 조건 충족시 1번만 실행되는 코드이므로 해당없음
+
+return = 함수 탈출 또는 인클루드 탈출
+  - 함수 안에서 쓰면 함수 실행을 종료하고, 그 함수를 호출했던 지점으로 돌아가서 계속 실행함
+  - 함수 밖에서 쓰면 현재 파일을 인클루드했던 파일로 돌아가서 계속 실행함
+  - 함수 밖인데 인클루드한 것도 없으면 그냥 종료됨, 즉 exit과 동일한 효과가 됨
+
+exit, die = 무조건 종료
+  - 말 그대로 프로그램이 죽어버림
+  
+  ----------------------------------
+  
+
+index.php           login.php                   loginOk.php
+a >> login.php      form post loginOk.php       비교연산자 ==, !=
+                    userId,userPw               로그인성공 >>> main.php?userId 아이디
+                                                로그인실패 >>> 다시 login.php
+                                                
+                                                main.php
+
+location.href=\"login.php\";
+                                                
