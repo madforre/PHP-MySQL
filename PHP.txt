@@ -444,4 +444,20 @@ a >> login.php      form post loginOk.php       비교연산자 ==, !=
                                                 main.php
 
 location.href=\"login.php\";
-                                                
+
+--------------------------------------------
+index.php
+
+회원가입, 로그인 폼 검증단계 구현
+
+login.php   loginOk.php >> 성공 >> main.php
+                           실패 >> join.php
+
+join.php    joinOk.php  >> 성공 >> login.php
+
+form post
+userId,userPw
+userHobbys[]
+userPhone[]
+button
+자바스크립트..
