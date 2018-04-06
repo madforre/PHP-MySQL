@@ -461,3 +461,45 @@ userHobbys[]
 userPhone[]
 button
 자바스크립트..
+
+-------------------------------------------
+
+1. continue와 break
+
+	continue - 
+
+		continue 문은 PHP에게 현재 루프를 중단하고 바로 다음 루프로 가라고 알리는 것 외에는 
+		break 문과 비슷하다. 따라서 전체 루프를 빠져나가는 대신 현재의 루프만 지나간다.
+
+		이 방법은 현재의 루프를 계속 실행할 필요가 없고 프로세서의 시간을 절약해야 하거나, 
+		다음 루프로 이동해 오류 발생을 방지하는 등의 경우에 유용하게 사용된다
+
+	
+	break -	반복문 탈출시에 사용합니다.
+
+2. include 문
+
+	include will only produce a warning (E_WARNING) and the script will continue
+	
+3. require 문
+
+	require will produce a fatal error (E_COMPILE_ERROR) and stop the script
+
+4. include, require 차이
+
+	there is one big difference between include and require;
+	when a file is included with the include statement and PHP cannot find it, 
+	the script will continue to execute.
+
+	if we do the same example using the require statement, 
+	the echo statement will not be executed because the script execution dies after 
+	the require statement returned a fatal error:
+
+	Use require when the file is required by the application.
+	Use include when the file is not required and application should continue when file is not found.
+    
+---------------------------
+
+큰 그림을 갖고 장기적으로 추구하는 것이 맞겠지만, 구현의 시작은 차근차근 단계적으로 해야 한다.
+
+프로세스와 가이드도 시대의 변화 시점에 대응해 업데이트 되어야한다.
