@@ -1,11 +1,11 @@
 <?php
 //연관배열
 $members=array(
-                    'userId'=>'hee',
-    'userPw' => '1111',
-    'userName' => 'gun',
-    'userPhone' => '010-000-0000'
-    );
+                'userId'=>'hee',
+                'userPw' => '1111',
+                'userName' => 'gun',
+                'userPhone' => '010-000-0000'
+                );
 echo "<pre>";
 echo print_r($members);
 echo "</pre>";

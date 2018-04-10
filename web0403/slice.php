@@ -25,7 +25,7 @@ echo "<pre>";
 print_r($rs);
 echo "</pre>";
 
-$rs=array_slice($rs,0); // 시작위치
+$rs=array_slice($rs,0); // 시작위치 0번지부터 시작하고 나머지는 버리므로 버리는게 없다.
 
 echo "\$rs = array_slice(\$rs,0)인 경우";
 

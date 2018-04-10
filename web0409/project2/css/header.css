@@ -13,7 +13,7 @@
 .header .gnb{
     width : 98%;
     max-width : 1000px;
-    background: #305;
+    background: #355;
     margin : 0 auto;
     overflow: hidden;
 }
@@ -33,7 +33,6 @@
     background: #30a;
 }
 /*
-
 .header .gnb>ul::after {
     content:'';
     display: table;

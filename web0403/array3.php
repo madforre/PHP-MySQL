@@ -1,6 +1,6 @@
 <?php
 
-$arrInt3=[];
+$arrInt3=[]; //배열 선언
 
 $arrInt3[0]=1;
 $arrInt3[1]=2;
