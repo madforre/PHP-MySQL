@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+.login {
+    width : 500px;
+    height : auto;
+    background: #efe;
+    margin: 0 auto;
+    margin-top : 50px;
+    padding: 12px;
+}
+
+.login h1 {
+    padding : 8px 0px;
+    color : #1a1;
+    text-align: center;
+}
+
+.login_header {
+    overflow: hidden;    
+    box-sizing: border-box;
+}
+
+.login_header>ul>li{
+    margin: 10px 0%;
+    width : 50%;
+    line-height: 47px;
+    float : left;
+    background: #cfc;
+    box-sizing: border-box;
+    color : #1a1;
+    text-align: center;
+    font-size : 13px;
+}
+
+.login_content input{
+    display : block;
+    width : 100%;
+    height : 45px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border : 1px dotted #ccc;
+    text-indent: 15px;
+}
+
+.login_content ul>li:nth-last-child(1)>input{
+    background: #7d7;
+    color : #fff;
+    text-indent: 0px;
+}
+
+.login_footer ul {
+    overflow: hidden;
+}
+
+.login_footer ul li{
+    border-top : 1px dotted #1a1;
+    margin-top: 3px;
+    float : left;
+    width : 33%;
+    line-height: 45px;
+    text-align: center;
+    font-size : 13px;
+    box-sizing: border-box;
+}
+
+.login_footer ul li a {
+    display: block;
+    color : #7d7;
+    border : 0px;
+}
+
+
+/*click, select*/
+
+.login_header ul li:hover {
+    cursor : pointer;
+}
+
+.login_header>ul>li:nth-child(1){
+/*
+    background: #7d7;
+    color : #fff;
+*/
+    border-right: 1px solid #fff;
+}
+
+.login_header>ul>li:nth-child(2){
+/*
+    background: #7d7;
+    color : #fff;
+*/
+    border-left: 1px solid #fff;
+}
+
+.login_header .on {
+    background: #7d7;
+    color : #fff;    
+    box-sizing: border-box;
+}
