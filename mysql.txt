@@ -179,3 +179,29 @@ primary key(userId); // 유일성, 중복불가능
 수정
 
 UPDATE 테이블명 SET 필드명='변경할 값' WHERE 필드명=해당값;
+
+---------------------------
+
+FROM table_references
+
+WHERE where_condition
+
+ORDER BY id DESC LIMIT 2
+id column 정렬순서가 역전된 상태에서
+2개만 출력됨
+
+UPDATE table_references SET
+description='바꿀내용',
+title='바꿀내용', WHERE id=2;
+
+WHERE문을 빠뜨리면 정말 큰
+재앙이 올 수 있다.
+
+DELETE FROM table_name WHERE
+
+제일 중요한 것은 WHERE 문이다!!!
+빠뜨리면 모든 행이 삭제되므로 큰일난다!!
+
+ex) DELETE FROM topic WHERE id = 5;
+
+record, row 행 삭제 

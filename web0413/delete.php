@@ -9,6 +9,7 @@ if(!isset($_SESSION['sessionId'])){
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    
 </head>
 <body>
    <form action="deleteOk.php" method="post">
