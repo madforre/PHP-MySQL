@@ -126,6 +126,9 @@ set password for root@localhost=password('1111');
 
 exit;
 
+
+
+
 1.DB생성 2.테이블 생성 
 
 1.show databases;/*데이터 베이스 보기*/
@@ -137,7 +140,7 @@ exit;
 
 root
 
-create table MemberJoin(
+create table MembeJon(
 	userId varchar(100) not null,
 	userPw varchar(100) not null,
 	userName varchar(200) not null,
@@ -145,9 +148,8 @@ create table MemberJoin(
 	userAge varchar(10) not null,
 	userAddr varchar(300) not null,
 	userHobbys varchar(300) not null,
-	userPhonevarchar(200) not null,
-	primary key(userId);
-);
+	userPhone varchar(200) not null,
+	primary key(userId));
 
 ------------------------------
 
@@ -205,3 +207,97 @@ DELETE FROM table_name WHERE
 ex) DELETE FROM topic WHERE id = 5;
 
 record, row 행 삭제 
+
+---------------------
+
+1. mysql 한글 깨짐 오류 해결 방법
+
+    ALTER DATABASE db1 DEFAULT CHARACTER SET UTF8;
+    만들어진 DB의 캐릭터셋 변경
+
+PHP MySQL 데이터베이스 연결방법 세가지 각각 정리
+
+
+2. mysql()
+
+    mysql_ 로 시작하는 함수들로 구성되어 있습니다. 현재는 deprecated 되어서 더이상 사용하지 않습니다.
+
+	mysql 함수는 이제는 더 이상 사용되지 않는 절차지향적인 인터페이스에요. 
+	mysql 함수에서는 SQL 인젝션을 막기 위해 모든 변수를 수동으로 이스케이프해야해요.
+
+3. mysqli() (PHP5, PHP7)
+
+    mysql 함수를 개선한 것으로 prepared statement를 사용할 수 있다.
+    
+    mysqli 확장형 함수 mysqli_connect()
+    
+    new mysqli() 객체를 이용 사용..
+
+	MySQLi는 mysql 함수를 대체하기 위해 만들어진 객체지향적인 인터페이스에요. MySQLi는 Prepared Statement를 지원해요.
+
+
+4. PDO (PHP Data Object) API (PHP 5 >= 5.1.0, PHP 7):
+
+    PDO는 PHP를 사용하여 서로 다른 종류의 데이터베이스에 접근하는 공통 API를 제공하는 것을 목표로 만들어 졌습니다.
+    객체기반의 API 이고, prepared statement를 제공합니다.
+    대량의 데이터는 이걸 많이 쓴다.
+	
+    PDO(PHP Data Objects)는 보다 일반적인 데이터베이스 인터페이스에요. 
+	PDO는 객체지향적이고 Prepared Statement를 지원할 뿐만 아니라 많은 MySql 이외의 데이터베이스들도 지원합니다.
+
+----------------------------
+
+create databases 
+
+
+show databases;
+
+1. use DB명
+2. show tables;
+3. desc 테이블명 (테이블의 구조)
+4. select * from 테이블명
+5. insert into 테이블(필드) values(값)
+6. update 테이블 set 필드1=변경값, 필드2=변경값 where 조건(ex ) userId='m1';
+
+
+-------------------------------
+
+mysql_* vs MySQLi vs PDO
+
+1. mysql 함수는 이제는 더 이상 사용되지 않는 절차지향적인 인터페이스에요. mysql 함수에서는 SQL 인젝션을 막기 위해 모든 변수를 수동으로 이스케이프해야해요.
+
+2. MySQLi는 mysql 함수를 대체하기 위해 만들어진 객체지향적인 인터페이스에요. MySQLi는 Prepared Statement를 지원해요.
+
+3. PDO(PHP Data Objects)는 보다 일반적인 데이터베이스 인터페이스에요. PDO는 객체지향적이고 Prepared Statement를 지원할 뿐만 아니라 많은 MySql 이외의 데이터베이스들도 지원해요.
+
+PDO를 추천해드려요
+
+mysql 함수는 보안에 구멍을 만들 수 있고, 코드가 더럽게 보이게 만들어요. 그래서 이제 더 이상 사용되지 않아요.
+
+그러니 선택지는 MySQLi와 PDO 두 개인데, 그 중 PDO를 추천해드려요.
+
+-------------------------------
+/*만약 데이터베이스 안에 joinMember테이블이 있으면 이 코드를 실행하지 마라)*/
+create table if not exists joinMember(
+	userId varchar(100) not null,
+    userPw varchar(100) not null,
+    userGender varchar(10) not null,
+    userHobbys varchar(200) not null,
+    userPhone varchar(200) not null,
+    primary key(userId);
+);
+--------------------------------
+
+일반적으로 mysql서버는 따로 설치하여 관리해준다.
+
+--------------------------------
+
+RENAME 명령어를 사용하여 테이블의 이름을 변경할 수 있다.
+
+    RENAME 변경전 테이블명 TO 변경후 테이블명;
+
+    RENAME TEAM_BACKUP TO TEAM;
+
+---------------------------------
+
+$conn=new mysqli("호스트이름","계정아이디",")
