@@ -61,22 +61,21 @@ if($result1->fetch_row()[0]==$userId){
         </script>
         ";
 
-    session_start();
-    session_destroy();
+        session_start();
+        session_destroy();
 
-    $conn->close();
+        $conn->close();
 
+        }else{
+        echo "
+            <script>
+                alert('비밀번호가 일치하지 않습니다.');
+                history.go(-1);
+            </script>
+            ";
+        exit;   
+        }
     }else{
-    echo "
-        <script>
-            alert('비밀번호가 일치하지 않습니다.');
-            history.go(-1);
-        </script>
-    ";
-    exit;   
-        
-    }
-}else{
     echo "
         <script>
             alert('회원이 아닙니다.');
@@ -84,5 +83,5 @@ if($result1->fetch_row()[0]==$userId){
         </script>
     ";
     exit;   
-}
+    }
 ?>

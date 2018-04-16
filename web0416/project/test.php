@@ -1,7 +1,11 @@
 <?php
 
+
+
 include('./db_connect.php');
 
+
+// userId wow5인 회원의 userId, userPw 가져오기 
 $sql1="SELECT userId FROM joinmember WHERE userId='wow5'";
 $sql2="SELECT userPw FROM joinmember WHERE userId='wow5'";
 
