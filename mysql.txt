@@ -301,3 +301,54 @@ RENAME 명령어를 사용하여 테이블의 이름을 변경할 수 있다.
 ---------------------------------
 
 $conn=new mysqli("호스트이름","계정아이디",")
+
+-----------------------------------
+
+
+------------------------
+
+한글깨짐해결
+
+기존의 만들어져있던 Database나 Table들의 Character-Set이 변경되는 것은 아니므로 직접 변경을 해줘야 한다.
+
+현재 Character-Set 확인하기
+
+show variables like 'c%'
+status
+
+1. 만들때 utf8 형식으로 만들기
+
+create schema member4 default charset utf8;
+
+create table member4(
+userId varchar(100) not null,
+userPw varchar(100) not null,
+primary key(userId)
+)ENGINE = InnoDB default charset=utf8;
+
+2. 기존의 Database의 Character-Set 속성 변경하기
+
+    ALTER DATABASE [DB명] DEFAULT CHARACTER SET utf8;
+    
+
+MySQL 재시작하기
+
+service mysql restart
+
+-----------------
+
+컬럼 생성시에 unsigned 선언의 의미
+
+d 같은 경우 솔직히 음수는 쓰지 않으므로
+
+int의 범위에서 반은 쓰질 않는다.
+
+이럴때 unsigned를 선언해 주면 그 범위가 양수로 옮겨진다.
+
+-2147483648 ~2147483647 에서 0 ~ 4294967295 로 옮겨가는 것이다.
+
+-------------
+
+테이블 생성시 
+형식을 TIMESTAMP로 하면 데이터를 입력할 때 해당 시간이 찍힌다.
+연 월 일 시 분 초  찍힘.

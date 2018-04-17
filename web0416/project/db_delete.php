@@ -61,7 +61,7 @@ if($result1->fetch_row()[0]==$userId){
         </script>
         ";
 
-        session_start();
+        @session_start();
         session_destroy();
 
         $conn->close();

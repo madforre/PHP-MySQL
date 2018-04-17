@@ -51,7 +51,7 @@ if($result->num_rows ==0){
     exit;
 }
 
-session_start();
+@session_start();
 $_SESSION['sessionId']=$userId;
 
     echo "
