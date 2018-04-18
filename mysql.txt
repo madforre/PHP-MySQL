@@ -352,3 +352,36 @@ int의 범위에서 반은 쓰질 않는다.
 테이블 생성시 
 형식을 TIMESTAMP로 하면 데이터를 입력할 때 해당 시간이 찍힌다.
 연 월 일 시 분 초  찍힘.
+
+------------------
+
+PHP와 mySQL 연결 로직(논리) 및 알고리즘(계산순서, 처리순서) 필기
+
+$query = "mySQL에 보내줄 쿼리문";
+
+$conn=new mysqli($hostName,$dbId,$dbPw,$dbName); // DB에 접속
+
+$conn->query($query); // 성공하면 1값을 반환
+
+$result=$conn->query($query) ; // DB의 DATA를 GET($result 변수에 담음)
+
+if ($result->num_rows>0) {가져올 레코드가 있으면 while문으로 $row=$result->fetch_assoc(); 하고
+                                                echo를 사용하여
+                                                $row['userId']나 $row['userPw'] 이런식으로
+                                                연관된 배열들을 게시판형식으로 출력해줄 수 있다.
+                                                }
+                                                else { 가져올 레코드(행) 데이터가 없다고 알려준다.}
+
+if ($result->num_rows==0) {가져올 레코드가 없으면. 로그인 실패라고 알려주고 exit;}
+
+                                                else{ while문으로  
+                                                $row=$result->fetch_assoc(); 하고
+                                                echo를 사용하여
+                                                $row['userId']나 $row['userPw'] 이런식으로
+                                                연관된 배열들을 게시판형식으로 출력해줄 수 있다.
+                                                }
+
+$row=$result->fetch_assoc() //DB DATA를 레코드 단위로 가져옴
+
+#f6f4f0
+--------------------
