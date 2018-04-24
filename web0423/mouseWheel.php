@@ -6,6 +6,9 @@
 	<title>Document</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<style>
+        body{
+            overflow: hidden;
+        }
         *{width: 100%;height: 100%;}
         ul,li{
             list-style: none;
