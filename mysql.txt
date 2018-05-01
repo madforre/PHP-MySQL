@@ -1,4 +1,4 @@
-SQL 형태
+﻿SQL 형태
  
 
 SQL 문법의 종류 3가지
@@ -466,3 +466,37 @@ asc 오름차순 작은거에서 큰거로.
 
 조회수 업데이트 쿼리문 "update 테이블명 set view=view+1 where id=$id" 
     여기서 view는 조회 컬럼이다.
+
+--------------
+
+ALTER TABLE table_name
+ALTER COLUMN column_name datatype;
+
+ALTER TABLE table_name
+MODIFY COLUMN column_name datatype;
+
+-----------------
+
+SQL
+
+	DDL 데이터 베이스 정의
+	create, drop
+
+	DML 데이터베이스 조작어
+	insert, update, select, delete
+	추가, 수정, 조회, 삭제
+
+	DCL 데이터베이스 제어
+	alter (구조를 변경)
+
+게시글 폼 작성
+
+/* 컬럼 추가 */
+alter table [테이블명] add [컬럼명] [타입] [옵션];
+
+/* 컬럼 삭제 */
+alter table [테이블명] drop [컬럼명];
+
+/* 컬럼명 변경 및 타입 변경 */
+alter table ...........
+
