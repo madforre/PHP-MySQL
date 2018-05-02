@@ -35,3 +35,58 @@
  	 서버의 응답이 JSON 형식으로 작성된 경우 문자열을 
 	
 	 JavaScript 객체로 구문 분석 할 수 있습니다.
+
+
+-----------------------------------
+
+Ajax
+
+비동기, 자바스크립트 ,XML =>> 요즘엔 JSON 방식으로 구현
+
+Ajax는 비 동기적인 웹 애플리케이션의 제작을 위한 웹 개발 기법이다.
+
+기존 웹 애플리케이션
+
+    브라우저에 폼을 채우고 서버로 제출하여 응답을 얻음 
+
+Ajax 웹 어플리케이션
+
+    필요한 데이터만을 웹서버에 요청해서 클라이언트 쪽에서 데이터 처리 가능.
+    
+장점
+    페이지 이동없이 고속으로 화면을 전환 할 수 있다.
+    서
+    
+
+단점 
+    Ajax를 쓸 수 없는 브라우저에 대한 문제가 있다.
+    Http클라이언트의 기능이 한정되어 있다.
+    지원하는 charset이 한정되어 있다. (UTF8)
+    페이지 이동없는 통신으로 보안상 문제가 있다.
+    스크립트로 작성되기 때문에 디버깅이 용이 하지 않음
+    요청을 남발하면 역으로 서버 과부하 걸릴 수 있다.
+    동일-출처 정책으로 인해 다른 도메인과는 통신이 불가능하다.(Cross-Domain 문제)
+
+
+: XML
+
+var req = new XMLHttpRequest();
+req.open(' 전송방식', '서버페이지(php나 jsp'),false(비동기방식)); // 세번째 인자로 true를 주면 동기방식이 된다.
+req.onreadystatechange = function (aEvt) {
+    if (req.readyState == 4) {
+        if(req.status == 200)
+            dump(req.responseText);
+        else
+            dump("Error loading page\n");
+    }
+};
+req.send(null);
+
+
+--------------------------
+
+JSON.parse(data)l // data(문자열;)를 JSON객체로 변환
+var ob = JSON.parse(data);
+
+JSON.stringfiy
+
