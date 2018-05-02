@@ -10,7 +10,7 @@
         
     // 1. 이름이 붙은 placeholder
 
-    $sql = "INSERT INTO member (last_name, first_name, age) VALUES ( :last_name, :first_name, :age )";
+    $sql = "INSERT INTO $tableName (last_name, first_name, age) VALUES ( :last_name, :first_name, :age )";
     $stmh = $pdo->prepare($sql);
     
     $stmh->bindValue(':last_name', $_POST['last_name']);
