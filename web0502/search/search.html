@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PHP테스트</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+ <form name="form1" method="POST" action="search_sql.php">
+        <label for="name">이름</label> : <br><input type="text" name="search_key"><br>
+        <input type="submit" value="검색하기">     
+ </form>    
+</body>
+</html>    
+
+
+<!--
+    로직
+
+    html 폼을 사용,
+    입력한 값을 프리페어드 스테이트먼트를 이용하여 
+    db에 접속,
+    그 후 sql 문을 이용해서
+    조회 및 검색한다.
+    프리페어드 스테이트먼트의 메소드를 이용하여
+    실행한 결과의 건수를 변수에 할당하고, ( 예 : $count = $stmt->rowCount(); 이용 )
+    if문을 사용하여 결과 건수가 없으면 없다고 알려주고
+    있으면 
+    
+            while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
+               
+                연관 배열을 통해 HTML 태그에 
+                htmlspecialchars($row['age'])
+                이런 식으로 넣어서 출력해준다.
+            };
+            
+    데이터를 불러온 모든 변수에 htmlspecialhcars 함수를 적용하여
+    변수 안에 포함될 수 있는 HTML 태그를 무효로 하여 크로스사이트 스크립팅이라는 공격을
+    회피할 수 있습니다.
+
+-->
