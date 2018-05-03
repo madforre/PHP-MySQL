@@ -88,5 +88,34 @@ req.send(null);
 JSON.parse(data)l // data(문자열;)를 JSON객체로 변환
 var ob = JSON.parse(data);
 
-JSON.stringfiy
+JSON.stringify // JSON 객체를 data(문자열)로 변환
 
+Imagine we have this object in JavaScript:
+
+    var obj = {"name":"John", "age":30, "city":"New York"};
+
+Use the JavaScript function JSON.stringify() to convert it into a string.
+
+    var myJSON = JSON.stringify(obj);
+
+    echo myJSON = {"name":"John", "age":30, "city":"New York"};
+
+    document.getElementById("demo").innerHTML = myJSON 결과 역시 {"name":"John", "age":30, "city":"New York"};
+
+$.ajax({
+    type:"post/get"(생략가능), 
+    url: 서버페이지 url,
+    data : 서버 전송 data,
+    datatype : 데이터 타입(생략가능),
+    success: function(resData받는데이터){
+        // 서버에 전송 성공시
+        // resData; // 서버에서 전송해주는 data
+    }else{
+        //실패시 처리
+    } 
+})
+
+
+쓰이는 메소드들이 있음.
+.done() ;;// 성공
+.fail() ;; // 실패시

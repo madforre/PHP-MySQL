@@ -1,11 +1,11 @@
     <?php
 
-    $tableName = "user";
+    $tableName = "member";
 
     $db_user = "root"; // 사용자명
-    $db_pass = "1111"; // 패스워드
+    $db_pass = "fire0428"; // 패스워드
     $db_host = "localhost"; // 호스트명
-    $db_name = "test"; // 데이터베이스명
+    $db_name = "php_ajax"; // 데이터베이스명
     $db_type = "mysql"; // 데이터베이스 종류
     $dsn = "$db_type:host=$db_host;dbname=$db_name;charset=utf8";
 
