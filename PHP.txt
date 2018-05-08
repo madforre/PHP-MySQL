@@ -1097,4 +1097,9 @@ p.s - 클래스 내부에서 트레이트를 지정하는 것처럼
 
 ---------------------------------------
 
-{}
+PDO 방식은 주입(injection) 공격을 막아준다.
+
+pdo방식에서 출력은 따로 막아줘야 한다.
+
+Prepared statements protect against SQL injection, not XSS. 
+To do that, you'll always have to pass any untrusted data through either htmlentities or htmlspecialchars.

@@ -1,5 +1,5 @@
 <?php
-    @session_start( );
+    @session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,11 +20,11 @@
         
         $stmh->bindValue(':last_name',$_POST['last_name'],PDO::PARAM_STR);  // bindValue 메소드로 플레이스 홀더에 결합합니다.
         $stmh->bindValue(':first_name',$_POST['first_name'],PDO::PARAM_STR);
-        $stmh->bindValue(':age_name',$_POST['age'],PDO::PARAM_INT);
+        $stmh->bindValue(':age',$_POST['age'],PDO::PARAM_INT);
         $stmh->bindValue(':id',$id,PDO::PARAM_INT);
         
-        $stmh->execute( ); // execute 메소드로 SQL을 실행하면 수정됩니다.
-        $pdo->commit( ); // commit 메소드로 트랜잭션 처리를 확정합니다.
+        $stmh->execute(); // execute 메소드로 SQL을 실행하면 수정됩니다.
+        $pdo->commit(); // commit 메소드로 트랜잭션 처리를 확정합니다.
         print "데이터를 " .$stmh->rowCount()."건 수정하였습니다.<br>";
         }catch(PDOexception $Exception){
             $pdo->rollBack( ); // 실패한 경우에는 catch 블록의 rollback 메소드를 사용해 처음 상태로 돌리고 종료합니다.

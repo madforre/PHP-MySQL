@@ -1,0 +1,41 @@
+1. node.js란?
+    자바스크립트 라이브러리. 서버사이드 플랫폼
+    자바스크립트(객체)
+    자바스크립트 기반(이벤트,함수)
+    
+2. npm 이란?
+
+
+3. cordova 란?
+
+
+4. 하이브리드앱이란?
+
+
+1. 프로젝트 생성 hybridApp
+cordova create 프로젝트디렉토리(폴더) 프로젝트 패키지 프로젝트명
+
+
+2. 이동
+
+cd 해당 프로젝트 디렉토리로 이동
+
+3. 각 플랫폼 설치
+
+cordova platform add 플랫폼
+
+cordova platform add ios
+cordova platform add android
+cordova platform add browser
+
+4. 각 플랫폼 빌드
+cordova build ios cordova build android 안드로이드 스튜디오 RAM 4기가 이상이어야함
+cordova build browser
+
+
+mac 에서는 둘다 ios 가능
+
+ios 1년에 99달라
+
+안드로이드 25달라
+
