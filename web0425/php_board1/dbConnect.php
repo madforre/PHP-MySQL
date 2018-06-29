@@ -1,8 +1,8 @@
 <?php
 $hostName='localhost';// 계정
 $dbId='root';//계정 아이디
-$dbPw='1111';//계정 비빌번호
-$dbName='member8';//DB명
+$dbPw='apmsetup';//계정 비빌번호
+$dbName='OneQ';//DB명
 
 $conn=new mysqli($hostName,$dbId,$dbPw,$dbName);
 
